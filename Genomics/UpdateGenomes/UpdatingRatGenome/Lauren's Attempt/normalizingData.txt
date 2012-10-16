@@ -1,0 +1,7 @@
+cd /home/saba/HXBExonData/Brain
+export PATH=$PATH:/usr/local/apt-1.12.0-20091012-amd64-pc-linux/bin
+
+
+#  Full Transcript Level
+apt-probeset-summarize -p
+/home/kiemele/HXB/UpdateRatGenome/try20121012/results/RaEx-1_0-st-v1.r2.rn5masked.pgf -c /home/saba/HXBExonData/Brain/RaEx-1_0-st-v1.r2.clf -b /home/saba HXBExonData/Brain/RaEx-1_0-st-v1.r2.antigenomic.bgp --qc-probesets /home/saba/HXBExonData/Brain/RaEx-1_0-st-v1.r2.qcc -m /home/kiemele/HXB/UpdateRatGenome/try20121012/results/RaEx-1_0-st-v1.r2.dt1.rn5.full.MASKED.mps -a dabg -a rma -o "fullTrans.rn5" --cel-files /home/saba/HXBExonData/Brain/fileListing.brain.noOutliers.txt

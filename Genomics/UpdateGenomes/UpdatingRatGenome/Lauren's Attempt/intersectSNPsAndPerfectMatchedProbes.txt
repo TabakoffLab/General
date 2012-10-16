@@ -1,0 +1,1 @@
+intersectBed -a perfectMatches.txt -b combinedSNPs.scipen10.bed -c > snpsInProbes.txt
