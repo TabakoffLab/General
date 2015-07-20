@@ -1,0 +1,3 @@
+perl CreateMask.pl Affy /Volumes/Data/mm10/array/430v2/Aligned/Mouse430_2.default.multipleMatches.txt /Volumes/Data/mm10/array/430v2/Aligned/Mouse430_2.default.perfectMatches.txt /Volumes/Data/mm10/array/430v2/Mouse430_2.probe_fasta ILS,ISS /Volumes/Data/mm10/array/430v2/SNPs_Probes /Volumes/Data/mm10/array/430v2/Masks/LXS.Aug2013.430v2.mask.txt
+
+perl CreateMask.pl Affy /Volumes/Data/mm10/array/430v2/Aligned/Mouse430_2.default.multipleMatches.txt /Volumes/Data/mm10/array/430v2/Aligned/Mouse430_2.default.perfectMatches.txt /Volumes/Data/mm10/array/430v2/Mouse430_2.probe_fasta DBA /Volumes/Data/mm10/array/430v2/SNPs_Probes /Volumes/Data/mm10/array/430v2/Masks/DBA.Aug2013.430v2.mask.txt

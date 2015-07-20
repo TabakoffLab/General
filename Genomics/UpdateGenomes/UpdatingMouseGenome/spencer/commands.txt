@@ -1,0 +1,8 @@
+perl extractStrainSNPs.pl /Volumes/Data/mm10/snps/sanger/mgp.v3.snps.rsIDdbSNPv137.vcf /Volumes/Data/mm10/snps/sanger/snps_C57BL6NJ.bed C57BL6NJ CHROM,POS,ID,REF,ALT,QUAL,FILTER,INFO,FORM
+ 
+perl CreateMaskExon.pl /Volumes/Data/mm10/array/MoEx MoEx-1_0-st-v1.r2.pgf ILS,ISS MoEx-1_0-st-v1.r2.dt1.mm9. MoEx-1_0-st-v1.r2.LXS.MASKED.PERL.pgf mm10 LXS.MASKED.perl
+ 
+perl CreateMask.pl Affy /Volumes/Data/mm10/array/430v2/Aligned/Mouse430_2.default.multipleMatches.txt /Volumes/Data/mm10/array/430v2/Aligned/Mouse430_2.default.perfectMatches.txt /Volumes/Data/mm10/array/430v2/Mouse430_2.probe_fasta FVBNJ /Volumes/Data/mm10/array/430v2/SNPs_Probes /Volumes/Data/mm10/array/430v2/Masks/FVBNJ.Sept2013.430v2.mask.txt
+  
+./intersectBed -a /Volumes/Data/mm10/array/430v2/Aligned/Mouse430_2.default.perfectMatches.txt -b /Volumes/Data/mm10/snps/sanger/snps_FVBNJ.bed -c > /Volumes/Data/mm10/array/430v2/SNPs_Probes/FVBNJ_snpsInProbes.txt
+  

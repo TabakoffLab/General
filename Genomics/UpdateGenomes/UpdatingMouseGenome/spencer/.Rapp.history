@@ -1,0 +1,26 @@
+ILS <- read.table(file="/Volumes/Data/mm10/LXS/ILS_snpsInProbes.txt",sep="\t",header=FALSE)#
+ILS <- ILS[!grepl("random",ILS$V1),]#
+ILS <- ILS[!(ILS$V1 %in% c("chrM","chrUn")),]#
+dim(ILS)
+sum(ILS$V6>150)
+ILS$V6
+ILS$V1
+ILS$V5
+ILS$V4
+sum(ILS$V5>0)
+sum(ILS$V5==0)
+ISS <- read.table(file="/Volumes/Data/mm10/LXS/ISS_snpsInProbes.txt",sep="\t",header=FALSE)#
+ISS <- ISS[!grepl("random", ISS$V1),]#
+ISS <- ISS[!(ISS$V1 %in% c("chrM","chrUn")),]
+sum(ILS$V5==0)
+DNAseq <- rbind(ILS[ILS$V5==0,1:5],ISS[ISS$V5==0,1:5])
+DNAseq <- DNAseq[!(duplicated(DNAseq[,1:5])),]
+options(scipen=10)
+write.table(DNAseq[,c("V1","start","V2","V4","V5")],file="/Volumes/Data/mm10/LXS/LXS_combinedSNPs.BED",sep="\t",col.names=FALSE,row.names=FALSE,quote=FALSE)
+DNAseq
+rm(list=ls())#
+	results <- read.table(file="~/mm10/MoEx1_0st_probe.default.psl",sep="\t",skip=5)#
+	results<-results[!duplicated(results),]#
+	colnames(results)<-c("match","misMatch","repMatch","nCount","qNumInsert","qBaseInsert","tNumInsert","tBaseInsert","strand","qName","qSize","qStart","qEnd","tName","tSize","tStart","tEnd","blockCount","blockSizes","qStarts","tStarts")#
+	results$qDiff <- results$qEnd - results$qStart#
+	perfectBLAT <- results[results$match==25 & results$misMatch==0 & results$qDiff==25,]
